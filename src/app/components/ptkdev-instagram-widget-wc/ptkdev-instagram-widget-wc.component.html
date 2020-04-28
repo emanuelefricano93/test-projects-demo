@@ -1,0 +1,28 @@
+<div class="container-ptkdev-widget">
+  <div class="form-input-container col-2">
+    <form class="form-inputs" [formGroup]="fgInputs" (ngSubmit)="onChangeInputs()" novalidate>
+      <h2>Widget Configuration</h2>
+      <!-- Name in edit mode -->
+      <div class="col-12 mt-5">
+        <label for="accountName">Instagram account</label>
+        <input id="accountName" type="text" class="form-control" formControlName="accountName">
+      </div>
+      <!-- Name in edit mode -->
+      <div class="col-12 mt-5">
+        <label for="itemsLimit">Instagram account</label>
+        <input id="itemsLimit" type="number" class="form-control" formControlName="itemsLimit">
+      </div>
+
+      <!-- Save cancel button -->
+      <div class="col-12 mt-5 ">
+        <button type="submit" class="btn btn-primary" [disabled]="!fgInputs.valid">
+          Apply
+        </button>
+      </div>
+    </form>
+
+  </div>
+  <div class="col-10">
+    <ptkdev-instagram-widget id="widget" username="@manufrica" ></ptkdev-instagram-widget>
+  </div>
+</div>
